@@ -1,0 +1,64 @@
+@import '../../../Styles/variables';
+@import '../../../Styles/mixins';
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: $navbar-color; ;
+    min-height: 100vh;
+
+}
+
+.sidebarItems{
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    li{
+        @include flexCenter(row); 
+        text-align: center;
+        color: $navbar-text;
+        height: 110px;
+        margin: 15px 0;
+        column-gap: 10px;
+        box-shadow:0 3px 2px -2px #495057;
+        div{
+            @include flexCenter(column);
+            gap: 10px;
+            &:hover{
+                color: $navbar-text-onSelect;
+                .sideBarIcons{ 
+                    color: $navbar-text-onSelect;
+                }
+            }
+           
+        }
+    }
+  
+}
+
+.sideBarIcons{
+    color:$navbar-text;
+    font-size: 2.5rem;
+}
+
+
+.sidebarActiveTab{
+    background-color: $navbar-active-tab;
+}
+
+@media (max-width: 815px){
+    .sidebarItems{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:650px){
+    .sidebar{
+        width: 60%;
+    }
+    .sidebarItems{
+        font-size: 1rem;
+    }
+}
+
