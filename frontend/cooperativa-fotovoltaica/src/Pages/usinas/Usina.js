@@ -1,46 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUpVariables } from '../../Redux/UsinaSlice';
+import { setUpVariables,getVariavelSelecionada } from '../../Redux/UsinaSlice';
 import { GraficoTemporal } from '../../Components';
-import { InvestidoresLista } from '../../Components';
-
-
+import { InvestidoresLista,RadioBtn } from '../../Components';
 import './Usinas.scss'
 
-const displayOptions = () => {
-    const selectOptions = [{ value: 'tensao_V', option: 'Tensão' },
-    { value: 'corrente_A', option: 'Corrente' },
-    { value: 'potencia_kW', option: 'Potência' },
-    { value: 'temperatura_C', option: 'Temperatura' }]
-    let options = []
-
-    selectOptions.map((option) => {
-        options.push( 
-              <label className="timeTable-grid-container">
-              <input type="radio" value={option.value} name="selectTime" />
-              <span className="timeTable-grid-checkmark">{option.option}</span>
-              </label>)
-        
-        
-        
-       // <label><input type="radio" value={option.value} name="options" /> <span>{option.option}</span></label>
-    })
-    return options
-
-}
 
 function Usina() {
-    const [variavelResposta, setVariavelResposta] = useState('tensao_V')
     const dispatch = useDispatch();
+    const {variavelResposta} = useSelector((state) => state.usinaInfo)
 
     useEffect(() => {
         dispatch(setUpVariables())
     }, [])
 
-    const handleRadioChange = (event) => {
-        setVariavelResposta(event.target.value)
-    }
 
+    const setVariavelSelecionada =(input)=>{
+        dispatch(getVariavelSelecionada(input))
+    }
 
 
     //TODO graph is breaking the sidebar... probably because of the responsive thing 
@@ -53,10 +30,9 @@ function Usina() {
             </div>
             <div className="usinaBoby">
                 <div className="usinaGraph">
-                    <div className="usinaRadioBtn" onChange={handleRadioChange}>
-                        {displayOptions()}
-                    </div>
                     <GraficoTemporal variavelResposta={variavelResposta} />
+                    <RadioBtn setVariavelSelecionada={setVariavelSelecionada}/>
+                    <p>Selecione qual variavel deseja explorar</p>
                 </div>
                 <InvestidoresLista/>
             </div>

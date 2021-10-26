@@ -14,7 +14,7 @@ const initialState = {
          potencia:[],
          temperatura:[]
         },
-    dadosParaPlorar:[]};
+    variavelResposta:'tensao_V'};
 
 
 const usinaSlice = createSlice({
@@ -30,9 +30,12 @@ const usinaSlice = createSlice({
                 state.dadosFormatados.temperatura.push(item.temperatura_C)
             })
         },
+        getVariavelSelecionada:(state,action)=>{
+            state.variavelResposta=action.payload
+        }
         
     }
 })
 
-export const {setUpVariables} = usinaSlice.actions
+export const {setUpVariables,getVariavelSelecionada} = usinaSlice.actions
 export default usinaSlice.reducer; 

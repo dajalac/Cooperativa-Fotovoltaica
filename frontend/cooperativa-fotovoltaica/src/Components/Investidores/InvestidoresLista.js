@@ -12,6 +12,7 @@ import './InvestidoresLista.scss'
 
 const displayList = () => {
     const avatarColors =['#5c6bc0','#ffc107','#ff7043']
+    //avatarColors[Math.floor(Math.random()*avatarColors.length)]}
     let toDisplay = []
 
 
@@ -34,7 +35,7 @@ const displayList = () => {
                 <div>
                     <ListItem>
                         <ListItemAvatar >
-                            <Avatar sx={{bgcolor:avatarColors[Math.floor(Math.random()*avatarColors.length)]}}>
+                            <Avatar sx={{bgcolor:avatarColors[index]}}>
                                 {getNameToAvatar(individuo.nomeCliente)}</Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={individuo.nomeCliente} />

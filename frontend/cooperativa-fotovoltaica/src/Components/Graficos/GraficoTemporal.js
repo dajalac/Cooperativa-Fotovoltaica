@@ -7,7 +7,7 @@ import './GraficoTemporal.scss'
 function GraficoTemporal({variavelResposta}) {
     return (
         <div className="graficoTemporal">
-            <ResponsiveContainer width="90%" height="90%">
+            <ResponsiveContainer width="100%" height="98%">
                 <LineChart
                     width={500}
                     height={300}
@@ -15,7 +15,7 @@ function GraficoTemporal({variavelResposta}) {
                     margin={{
                         top: 5,
                         right: 30,
-                        left: 20,
+                        left: 0,
                         bottom: 5,
                     }}
                 >

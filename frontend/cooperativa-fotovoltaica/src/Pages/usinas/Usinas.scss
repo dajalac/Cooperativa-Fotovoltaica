@@ -22,21 +22,26 @@
 .usinaBoby{
     @include flexCenter(row);
     justify-content:space-between;
-    width: 90%;
+    width: 95%;
     
-}
-
-.usinaRadioBtn{
-    display: flex;
-    
-    // label{
-    //     @include flexCenter(row);
-    //     justify-content: left;
-    //     align-items:flex-start;
-
-    // }
 }
 
 .usinaGraph{
-    width: 60%;
+    @include flexCenter(column);
+    flex-grow:1;
+    
+    margin-top: 3rem;
+    //width: 60%;
+}
+
+@media(max-width:940px){
+    .usinaBoby{
+        @include flexCenter(column);
+        gap: 3rem;
+        width: 100%;
+    }
+    .usinaGraph{
+        width: 100%;
+    }
+
 }

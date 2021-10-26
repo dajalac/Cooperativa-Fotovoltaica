@@ -1,5 +1,14 @@
+@import '../../Styles/mixins';
+
 .graficoTemporal{
-    width: 100%;
+    @include flexCenter(row);
+    width: 90%;
     height: 400px;
-    background-color: aquamarine;
+}
+
+@media(max-width:640px){
+    .graficoTemporal{
+        width: 100%;
+    }
+
 }
