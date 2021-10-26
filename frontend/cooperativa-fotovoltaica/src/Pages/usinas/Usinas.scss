@@ -1,0 +1,28 @@
+@import '../../Styles/mixins';
+
+.usina{
+    @include flexCenter(column);
+    width: 100%;
+}
+.usinaHeader{
+    @include flexCenter(column);
+    width: 95%;
+    margin: 20px 0;
+
+    h2, div{
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        margin:0;
+    }
+    
+}
+
+.usinaBoby{
+    @include flexCenter(row);
+    width: 90%;
+    
+    div{
+        width: 100%;
+    }
+}

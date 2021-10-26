@@ -1,6 +1,22 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+}
+
 .AppContainer{
   display: flex;
-  margin-top: 2rem;
+  margin-top: 56px;
+}
+
+.AppScreens{
+  align-items: center;
+  width: 100vw;
+  flex-grow:1;
 }
 
 

@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
-import Sidebar from './Components/Navbar/Sidebar/Sidebar';
+import { Usina } from './Pages';
+import { Navbar } from './Components';
+import { Sidebar } from './Components';
 import './App.scss';
-import Navbar from './Components/Navbar/Navbar';
 
 function App() {
 const[showSideBar, setShowSideBar ] = useState(false); 
@@ -28,12 +29,18 @@ else if (!isMobile){
 
 
   return (
-    <div>
+    <div className="App">
       <Navbar displaySidebar={showSideBar} setSidebar={setShowSideBar}/>
       <div className="AppContainer">
         <Router>
           {displaySidebar}
-          Hello
+          <div className="AppScreens"> 
+          <Switch>
+          <Route exact path ='/' component={Usina}/>
+          
+          <Route component = {Usina}/>
+          </Switch>
+          </div>
         </Router>
       </div>
 
