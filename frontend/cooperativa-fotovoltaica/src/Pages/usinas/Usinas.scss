@@ -4,6 +4,7 @@
     @include flexCenter(column);
     width: 100%;
 }
+
 .usinaHeader{
     @include flexCenter(column);
     width: 95%;
@@ -20,9 +21,22 @@
 
 .usinaBoby{
     @include flexCenter(row);
+    justify-content:space-between;
     width: 90%;
     
-    div{
-        width: 100%;
-    }
+}
+
+.usinaRadioBtn{
+    display: flex;
+    
+    // label{
+    //     @include flexCenter(row);
+    //     justify-content: left;
+    //     align-items:flex-start;
+
+    // }
+}
+
+.usinaGraph{
+    width: 60%;
 }
