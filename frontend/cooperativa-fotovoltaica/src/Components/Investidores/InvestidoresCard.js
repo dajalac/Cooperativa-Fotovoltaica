@@ -15,7 +15,11 @@ function InvestidoresCard() {
     let history = useHistory()
 
     const handleVerMaisBtn=()=>{
-        history.push('/InvestidorInformacao');
+        history.push('/investidorInformacao');
+    }
+
+    const handleEditarInvestidor=()=>{
+        history.push('/editarInvestidores');
     }
     return (
         <div>
@@ -34,7 +38,7 @@ function InvestidoresCard() {
                 <CardActions className="investidoresCardActions">
                     <Button size="small" onClick={handleVerMaisBtn}>Ver mais</Button>
                     <div>
-                    <FaPen className="investidoresCardIcons"/>
+                    <FaPen className="investidoresCardIcons" onClick={handleEditarInvestidor}/>
                     <FaTrashAlt className="investidoresCardIcons" />
                     </div>
                 </CardActions>

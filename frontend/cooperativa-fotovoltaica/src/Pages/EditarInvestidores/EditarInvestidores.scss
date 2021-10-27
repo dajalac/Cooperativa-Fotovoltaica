@@ -1,0 +1,8 @@
+@import '../../Styles/mixins';
+
+.editarInvestidores{
+    @include flexCenter(column);
+    margin-top: 1rem;
+    gap:2rem
+    
+}

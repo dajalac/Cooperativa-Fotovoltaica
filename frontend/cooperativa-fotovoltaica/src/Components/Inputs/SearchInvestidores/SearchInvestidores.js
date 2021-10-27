@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import{validateName} from '../../../Utils/Validation';
+import{validarNome} from '../../../Utils/Validation';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import {FaSearch} from 'react-icons/fa';
@@ -10,7 +10,7 @@ function SearchInvestidores() {
     const [name, setName] = useState({value:'', error:false, errorMsg:''})
 
     const handleName =(event)=>{
-       const nameError = validateName(event.target.value);
+       const nameError = validarNome(event.target.value);
        setName({ value: event.target.value, error: nameError.error, errorMsg: nameError.msg })
     }
 
