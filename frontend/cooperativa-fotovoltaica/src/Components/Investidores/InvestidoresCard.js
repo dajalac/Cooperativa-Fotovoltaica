@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from '@mui/material/Box';
+import { useHistory } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import CardActions from '@mui/material/CardActions';
@@ -10,17 +10,13 @@ import {FaPen,FaTrashAlt } from 'react-icons/fa';
 
 import './InvestidoresCard.scss';
 
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
-
 
 function InvestidoresCard() {
+    let history = useHistory()
+
+    const handleVerMaisBtn=()=>{
+        history.push('/InvestidorInformacao');
+    }
     return (
         <div>
             <Card className="investidoresCard" sx={{ minWidth: 275 }}>
@@ -36,7 +32,7 @@ function InvestidoresCard() {
                     </div>
                 </CardContent>
                 <CardActions className="investidoresCardActions">
-                    <Button size="small">Ver mais</Button>
+                    <Button size="small" onClick={handleVerMaisBtn}>Ver mais</Button>
                     <div>
                     <FaPen className="investidoresCardIcons"/>
                     <FaTrashAlt className="investidoresCardIcons" />

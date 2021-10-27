@@ -43,7 +43,7 @@ function SearchInvestidores() {
                     ),
                 }}
                 variant="outlined" />
-            <Button variant="contained" color="success" sx={{ height: '100%' }} onClick={OnSearch}> Procure </Button>
+            <Button variant="contained" color="success" sx={{ height: '100%' }} onClick={OnSearch}> Procurar </Button>
         </div>
     )
 }

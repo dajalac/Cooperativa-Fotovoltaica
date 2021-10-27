@@ -1,8 +1,5 @@
 import React from 'react';
 import { InvestidoresCard, SearchInvestidores } from '../../Components';
-import Fab from '@mui/material/Fab';
-import Button from '@mui/material/Button';
-import { GrAdd } from "react-icons/gr";
 import './GerenciarInvestidores.scss'
 
 function GerenciarInvestidores() {

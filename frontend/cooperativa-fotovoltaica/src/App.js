@@ -6,7 +6,7 @@ import { Usina } from './Pages';
 import { Navbar } from './Components';
 import { Sidebar } from './Components';
 import './App.scss';
-import {GerenciarInvestidores} from './Pages';
+import {GerenciarInvestidores, InvestidoresMaisInfo} from './Pages';
 
 function App() {
 const[showSideBar, setShowSideBar ] = useState(false); 
@@ -40,6 +40,7 @@ else if (!isMobile){
           <Switch>
           <Route exact path ='/' component={Usina}/>
           <Route exact path ='/gerenciarInvestidores' component={GerenciarInvestidores}/>
+          <Route exact path ='/InvestidorInformacao' component={InvestidoresMaisInfo}/>
           <Route component = {Usina}/>
           </Switch>
           </div>

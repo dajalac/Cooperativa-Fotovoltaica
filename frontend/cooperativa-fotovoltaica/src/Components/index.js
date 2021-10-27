@@ -5,6 +5,7 @@ import InvestidoresLista from "./Investidores/InvestidoresLista";
 import RadioBtn from "./Inputs/RadioButtons/RadioBtn";
 import SearchInvestidores from "./Inputs/SearchInvestidores/SearchInvestidores";
 import InvestidoresCard from "./Investidores/InvestidoresCard";
+import EditarOuCadastrarForm from "./Forms/EditarOuCadastrarForm";
 
 export{Navbar,
        Sidebar,
@@ -12,4 +13,5 @@ export{Navbar,
        InvestidoresLista,
        RadioBtn, 
        SearchInvestidores,
-       InvestidoresCard}
+       InvestidoresCard,
+       EditarOuCadastrarForm}
