@@ -10,7 +10,7 @@ function Sidebar() {
         <div className="sidebar">
             <nav>
                 <ul className="sidebarItems">
-                    <NavLink exact to='/' style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab">
+                    <NavLink exact to={'/'} style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab">
                         <li className=" ">
                             <div>
                             <FaSolarPanel  className="sideBarIcons"/>
@@ -19,7 +19,7 @@ function Sidebar() {
                         </li>
                     </NavLink>
 
-                    <NavLink exact to='/' style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab ">
+                    <NavLink exact to={'/gerenciarInvestidores'} style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab">
                         <li className=" ">
                             <div>
                             <FaHandHoldingUsd className="sideBarIcons"/>
@@ -27,7 +27,7 @@ function Sidebar() {
                             </div>
                         </li>
                     </NavLink>
-                    <NavLink exact to='/' style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab ">
+                    <NavLink exact to={'/gerenciarInvestidores'} style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab ">
                         <li className=" ">
                             <div>
                             <FaFolder className="sideBarIcons"/>

@@ -1,0 +1,39 @@
+@import '../../Styles/mixins';
+
+.investidoresCard{
+    @include flexCenter(column);
+}
+
+.investidoresCardContent{
+    @include flexCenter(column);
+    gap:1rem;
+}
+
+.investidoresCardInfo{
+    @include flexCenter(column);
+    align-items:flex-start;
+    gap:1rem;
+    width: 100%;
+}
+
+.investidoresCardActions{
+    @include flexCenter(row);
+    justify-content:space-between;
+    width: 90%;
+    border-top: 1px solid rgb(199, 187, 187);;
+
+
+    div{
+    @include flexCenter(row);
+    
+    padding: 10px 0;
+    justify-content: end;
+    gap:2rem
+    }
+}
+
+.investidoresCardIcons{
+    font-size: 20px;
+    color: #1976d2;
+}
+

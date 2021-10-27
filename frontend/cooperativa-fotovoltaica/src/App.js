@@ -6,6 +6,7 @@ import { Usina } from './Pages';
 import { Navbar } from './Components';
 import { Sidebar } from './Components';
 import './App.scss';
+import {GerenciarInvestidores} from './Pages';
 
 function App() {
 const[showSideBar, setShowSideBar ] = useState(false); 
@@ -30,20 +31,21 @@ else if (!isMobile){
 
   return (
     <div className="App">
+      <Router>
       <Navbar displaySidebar={showSideBar} setSidebar={setShowSideBar}/>
       <div className="AppContainer">
-        <Router>
+        
           {displaySidebar}
           <div className="AppScreens"> 
           <Switch>
           <Route exact path ='/' component={Usina}/>
-          
+          <Route exact path ='/gerenciarInvestidores' component={GerenciarInvestidores}/>
           <Route component = {Usina}/>
           </Switch>
           </div>
-        </Router>
+        
       </div>
-
+      </Router>
     </div>
 
   );

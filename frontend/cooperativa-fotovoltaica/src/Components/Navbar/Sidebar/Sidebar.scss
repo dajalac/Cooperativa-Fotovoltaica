@@ -43,9 +43,10 @@
     font-size: 2.5rem;
 }
 
-
-.sidebarActiveTab{
-    background-color: $navbar-active-tab;
+.sidebarActiveTab {
+    //background-color: $navbar-active-tab;
+    background-color: red;
+    border-left:$navbar-active-tab ;
 }
 
 @media (max-width: 815px){
