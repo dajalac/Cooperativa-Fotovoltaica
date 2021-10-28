@@ -48,6 +48,28 @@
     gap:2rem;
 }
 
+.editarOuCadastrarFormUpdatePercentual{
+    @include flexCenter(row);
+    justify-content:start;
+    gap:1rem;
+    width: 90%;
+    margin-top: 5px;
+    
+    div{
+        @include flexCenter(row);
+        gap:10px;
+
+    }
+}
+
+.editarOuCadastrarFormIcons{
+    font-size: 20px;
+    color: #1976d2;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
+    padding: 5px;
+}
+
 @media(max-width:1130px){
     .editarOuCadastrarForm{
        width: 70%;
@@ -58,4 +80,8 @@
         box-shadow: none;
         width: 90%;
     }
+    .editarOuCadastrarFormUpdatePercentual{
+        @include flexCenter(column);
+    }
+   
 }

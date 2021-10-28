@@ -7,8 +7,9 @@ const investidoresFormatados =[]
 dadosClients.map((item)=>{
     investidoresFormatados.push({id: item.numeroCliente, 
         nome:item.nomeCliente, 
-        telefone:NaN, 
-        email:NaN,
+        telefone:null, 
+        email:null,
+        endereco:null,
         usina:{
             usinaId:item.usinas[0].usinaId,
             percentual:item.usinas[0].percentualDeParticipacao} })
@@ -16,6 +17,7 @@ dadosClients.map((item)=>{
 const initialState={
     investidores:investidoresFormatados ,
     porcentagemSelecionada: null,
+    investidorSelecionado:null,
     status:null
 }
 
@@ -50,11 +52,50 @@ const investidorSlice = createSlice({
            state.investidores= state.investidores.filter((item)=>{
                     return item.id !== action.payload.id
             })
+        },
 
+        setInvestidor:(state,action)=>{
+            state.investidorSelecionado=action.payload
+        },
 
+        updateInvestidor:(state,action)=>{
+            const antigoPercentual = state.investidorSelecionado.usina.percentual
+            const novoPercentual = action.payload.usina.percentual
+            const investidorUpdated = action.payload
+            const id = action.payload.id 
+            
+
+            if(novoPercentual > antigoPercentual){
+                //remove percentual dos outros investidores pq o cliente desejou aumentar seus investimentos
+                const percentagem= - novoPercentual - antigoPercentual
+                const valorParaBalancear = (percentagem/(state.investidores.length -1))
+                state.investidores.map((item)=>{
+                    item.usina.percentual= (item.usina.percentual - valorParaBalancear)
+                })  
+
+            }
+            if(antigoPercentual > novoPercentual){
+                // add percentual dos outros investidores pq o cliente desejou reduzir seus investimentos
+                const percentagem= antigoPercentual -novoPercentual;
+                const valorParaBalancear = (percentagem/(state.investidores.length-1))
+                state.investidores.map((item)=>{
+                    item.usina.percentual= (item.usina.percentual + valorParaBalancear)
+                })
+            }
+               
+            // salvar as altercoes do investidor editado
+                state.investidores.map(investidor=>{
+                    if(investidor.id ===id){
+                        investidor.nome = investidorUpdated.nome;
+                        investidor.telefone=investidorUpdated.telefone;
+                        investidor.email=investidorUpdated.email;
+                        investidor.endereco=investidorUpdated.endereco;
+                        investidor.usina.percentual=investidorUpdated.usina.percentual;
+                    }
+                })
         }
     }
 })
 
-export const {addInvestidor,removerInvestidor} = investidorSlice.actions
+export const {addInvestidor,removerInvestidor,setInvestidor,updateInvestidor} = investidorSlice.actions
 export default investidorSlice.reducer; 

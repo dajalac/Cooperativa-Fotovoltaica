@@ -22,14 +22,16 @@ const getNameToAvatar = (name) => {
 
 }
 
-function InvestidoresCard({investidor, aoDeletarInvestidor}) {
+function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEditar}) {
     let history = useHistory()
 
     const handleVerMaisBtn=()=>{
+        setInvestidoParaEditar(investidor);
         history.push('/investidorInformacao');
     }
 
     const handleEditarInvestidor=()=>{
+        setInvestidoParaEditar(investidor);
         history.push('/editarInvestidores');
     }
 

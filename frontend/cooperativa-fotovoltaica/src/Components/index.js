@@ -7,6 +7,7 @@ import SearchInvestidores from "./Inputs/SearchInvestidores/SearchInvestidores";
 import InvestidoresCard from "./Investidores/InvestidoresCard";
 import EditarOuCadastrarForm from "./Forms/EditarOuCadastrarForm";
 
+
 export{Navbar,
        Sidebar,
        GraficoTemporal, 

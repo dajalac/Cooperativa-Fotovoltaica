@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import {removerInvestidor} from '../../Redux';
+import {removerInvestidor,setInvestidor} from '../../Redux';
 import { InvestidoresCard, SearchInvestidores } from '../../Components';
 import './GerenciarInvestidores.scss'
 
@@ -21,6 +21,10 @@ function GerenciarInvestidores() {
         dispatch(removerInvestidor(investidor))
     }
 
+    const setInvestidoParaEditar=(investidor)=>{
+        dispatch(setInvestidor(investidor))
+    }
+
     return (
         <div className="gerenciarInvestidores">
             <SearchInvestidores />
@@ -29,7 +33,9 @@ function GerenciarInvestidores() {
             </div>
             <div className="gerenciarInvestidoresCard">
                 {investidores.map((item)=>
-                    <InvestidoresCard investidor={item} aoDeletarInvestidor={handleDeletarInvestidor}/>
+                    <InvestidoresCard investidor={item}
+                                       aoDeletarInvestidor={handleDeletarInvestidor}
+                                       setInvestidoParaEditar={setInvestidoParaEditar}/>
                 )}
                
             </div>
