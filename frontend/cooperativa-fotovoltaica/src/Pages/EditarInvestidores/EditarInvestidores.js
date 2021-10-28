@@ -8,7 +8,7 @@ function EditarInvestidores() {
     return (
         <div className="editarInvestidores">
              <Typography variant="body1" component="div" sx={{color:'#7F8E9D'}}>
-                    Cadastrar novo Investidor</Typography>
+                    Atualizar informções do Investidor</Typography>
             <EditarOuCadastrarForm/>
         </div>
     )

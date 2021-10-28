@@ -9,7 +9,8 @@
 
 .gerenciarInvestidoresCard{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
     width: 90%;
     gap:2rem;
     margin-top: 2rem;
@@ -19,6 +20,7 @@
     @include flexCenter(row);
     justify-content: right;
     width: 90%;
+    cursor: pointer;
 
     p{
         font-size: 20px;
@@ -29,6 +31,19 @@
        }
     }
 
-
 }
+
+// @media(max-width:980px){
+//     .gerenciarInvestidoresCard{
+//        grid-template-columns:1fr;
+//        width: 60%;
+//     }
+    
+// }
+// @media(max-width:640px){
+//     .gerenciarInvestidoresCard{
+//         width: 80%;
+//     }
+    
+// }
 

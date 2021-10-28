@@ -1,7 +1,8 @@
 import store from './store';
-import selecionaVariavel from './UsinaSlice'
+import {addInvestidor,removerInvestidor} from './InvestidorSlice'; 
 
 
 
-export {store}
+
+export {store, addInvestidor,removerInvestidor}
 

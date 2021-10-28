@@ -7,13 +7,32 @@ import Button from '@mui/material/Button';
 import 'react-phone-number-input/style.css';
 import './EditarOuCadastrarForm.scss';
 
-function EditarOuCadastrarForm() {
+function EditarOuCadastrarForm({handleSave}) {
     const valorInicial = { valor: '', erro: false, erroMsg: ' ' };
     const [nome, setNome] = useState(valorInicial);
     const [email, setEmail] = useState(valorInicial);
     const [endereco, setEndereco] = useState(valorInicial);
     const [telefone, setTelefone] = useState();
     const [investimento, setInvestimento] = useState()
+    //const checkPorErro={nome, email,endereco,telefone,investimento}
+
+    const desabilitarSaveBtn =()=>{
+        let flag =false
+        const checkPorErro=[nome, email,endereco]
+
+        for(let step=0; step<checkPorErro.length; step++){
+            if(checkPorErro[step].erro){
+               return flag=true;
+            }
+            if(!checkPorErro[step].erro && !checkPorErro[step].valor){
+                return flag=true;
+            }
+        }
+        if(!telefone || !investimento){
+            return flag=true
+        }
+      return flag
+    }
 
     const handleNome = (event) => {
         const nomeErro = validators.validarNome(event.target.value);
@@ -32,6 +51,20 @@ function EditarOuCadastrarForm() {
 
     const handleInvestimento = (event) => {
         setInvestimento(event.target.value)
+    }
+
+    const onSave =()=>{
+
+        const investidor={id:new Date(),
+                         nome: nome.valor,
+                         telefone: telefone,
+                         email: email.valor,
+                        usina:{
+                            id:1,
+                            percentual:investimento
+                        } }
+
+        handleSave(investidor)
     }
 
     return (
@@ -80,7 +113,7 @@ function EditarOuCadastrarForm() {
                
             <div  onChange={handleInvestimento}>
             <Typography variant="body2" component="div" sx={{color:''}}>
-               <label>Proporcao inicial de investimento: </label>
+               <label>Proporção do investimento desejada: </label>
                 <label><input type="radio" value="5" name="searchBy" /> <span>5%</span></label>
                 <label><input type="radio" value="10" name="searchBy" /> <span>10%</span></label>
                 <label><input type="radio" value="20" name="searchBy" /> <span>20%</span></label>
@@ -91,7 +124,7 @@ function EditarOuCadastrarForm() {
             <div className="editarOuCadastrarFormBtn">
                 
                 <Button variant="outlined" fullWidth > Cancelar </Button>
-                <Button variant="contained" fullWidth > Salvar </Button>
+                <Button variant="contained" fullWidth onClick={onSave}  disabled={desabilitarSaveBtn()}> Salvar </Button>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
@@ -10,8 +10,19 @@ import {FaPen,FaTrashAlt } from 'react-icons/fa';
 
 import './InvestidoresCard.scss';
 
+const getNameToAvatar = (name) => {
+    const nameInitials = []
+    const nameSlipted = name.split(' ')
 
-function InvestidoresCard() {
+    nameSlipted.map(name => {
+        nameInitials.push(name.charAt(0))
+    })
+
+    return nameInitials.join('')
+
+}
+
+function InvestidoresCard({investidor, aoDeletarInvestidor}) {
     let history = useHistory()
 
     const handleVerMaisBtn=()=>{
@@ -21,17 +32,22 @@ function InvestidoresCard() {
     const handleEditarInvestidor=()=>{
         history.push('/editarInvestidores');
     }
+
+    const handleDeletarInvestidor =()=>{
+        aoDeletarInvestidor(investidor)
+    }
     return (
         <div>
             <Card className="investidoresCard" sx={{ minWidth: 275 }}>
                 <CardContent className="investidoresCardContent">
-                    <Avatar sx={{ width: 56, height: 56, bgcolor: '#ffc107' }} >SP </Avatar>
+                    <Avatar sx={{ width: 56, height: 56, bgcolor: '#ffc107' }} >
+                        {getNameToAvatar(investidor.nome)} </Avatar>
                      <div className="investidoresCardInfo">  
                     <Typography variant="body1" component="div">
-                        Nome: Ana Paula
+                        Nome: {investidor.nome}
                     </Typography>
                     <Typography variant="body1">
-                        Participacao: 40%
+                        Participacao: {investidor.usina.percentual}%
                     </Typography>
                     </div>
                 </CardContent>
@@ -39,7 +55,7 @@ function InvestidoresCard() {
                     <Button size="small" onClick={handleVerMaisBtn}>Ver mais</Button>
                     <div>
                     <FaPen className="investidoresCardIcons" onClick={handleEditarInvestidor}/>
-                    <FaTrashAlt className="investidoresCardIcons" />
+                    <FaTrashAlt className="investidoresCardIcons" onClick={handleDeletarInvestidor} />
                     </div>
                 </CardActions>
             </Card>
