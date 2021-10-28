@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import {FaPen,FaTrashAlt } from 'react-icons/fa';
 import './InvestidoresMaisInfo.scss';
 
-function InvestidoresMaisInfo(props) {
+function InvestidoresMaisInfo() {
     const dispatch = useDispatch();
    const {investidorSelecionado}= useSelector((state) => state.investidor)
 

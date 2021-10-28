@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import * as validators from '../../Utils/Validation';
 import TextField from '@mui/material/TextField';
 import PhoneInput from 'react-phone-number-input';
@@ -9,14 +10,18 @@ import { IoAdd, IoRemove } from "react-icons/io5";
 import 'react-phone-number-input/style.css';
 import './EditarOuCadastrarForm.scss';
 
-function EditarOuCadastrarForm({ handleSave, investidor }) {
-    //const investidor = props.location.state.investidorSelecionado
+
+
+function EditarOuCadastrarForm({ handleSave, investidor}) {
     const valorInicial = { valor: '', erro: false, erroMsg: ' ' };
     const [nome, setNome] = useState(valorInicial);
     const [email, setEmail] = useState(valorInicial);
     const [endereco, setEndereco] = useState(valorInicial);
     const [telefone, setTelefone] = useState();
-    const [investimento, setInvestimento] = useState()
+    const [investimento, setInvestimento] = useState();
+    let history = useHistory();
+
+
 
     useEffect(() => {
         //Se um investidor eh passado para o componente, entao esse investidor sera editado. 
@@ -28,6 +33,7 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
             setInvestimento(investidor.usina.percentual)
         }
     }, [])
+
 
     const reduzirPercentual = () => {
         const novoValor = investimento - 1;
@@ -112,13 +118,12 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
                 nome: nome.valor,
                 telefone: telefone,
                 email: email.valor,
-                endereco:endereco.valor,
+                endereco: endereco.valor,
                 usina: {
                     id: 1,
                     percentual: investimento
                 }
             }
-
             handleSave(investidor)
 
         } else {
@@ -128,7 +133,7 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
                 nome: nome.valor,
                 telefone: telefone,
                 email: email.valor,
-                endereco:endereco.valor,
+                endereco: endereco.valor,
                 usina: {
                     id: 1,
                     percentual: investimento
@@ -138,6 +143,12 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
             handleSave(edicoes)
         }
 
+       history.push({pathname:'/gerenciarInvestidores',state:{openSnackbar:true}});
+       
+    }
+
+    const onCancel=()=>{
+        history.push('/gerenciarInvestidores')
     }
 
     return (
@@ -189,9 +200,10 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
 
             <div className="editarOuCadastrarFormBtn">
 
-                <Button variant="outlined" fullWidth > Cancelar </Button>
+                <Button variant="outlined" fullWidth onClick={onCancel}> Cancelar </Button>
                 <Button variant="contained" fullWidth onClick={onSave} disabled={desabilitarSaveBtn()}> Salvar </Button>
             </div>
+          
         </div>
 
 

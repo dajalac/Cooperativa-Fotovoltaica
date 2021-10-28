@@ -16,7 +16,6 @@ dadosClients.map((item)=>{
 })
 const initialState={
     investidores:investidoresFormatados ,
-    porcentagemSelecionada: null,
     investidorSelecionado:null,
     status:null
 }
@@ -37,7 +36,7 @@ const investidorSlice = createSlice({
 
             // add novo investidor
             state.investidores.push(action.payload)
-            state.status = 'cadastrado'
+            state.status ='success'
         },
 
         removerInvestidor:(state,action)=>{
