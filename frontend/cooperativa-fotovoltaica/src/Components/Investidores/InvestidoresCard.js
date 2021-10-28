@@ -6,6 +6,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import {FaPen,FaTrashAlt } from 'react-icons/fa';
 
 import './InvestidoresCard.scss';
@@ -23,6 +28,7 @@ const getNameToAvatar = (name) => {
 }
 
 function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEditar}) {
+    const [open, setOpen] = useState(false);
     let history = useHistory()
 
     const handleVerMaisBtn=()=>{
@@ -36,8 +42,18 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
     }
 
     const handleDeletarInvestidor =()=>{
-        aoDeletarInvestidor(investidor)
+        setOpen(true)
     }
+
+
+    const handleAgreed = () => {
+        setOpen(false);
+        aoDeletarInvestidor(investidor)
+        history.push('/gerenciarInvestidores')
+    }
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <div>
             <Card className="investidoresCard" sx={{ minWidth: 275 }}>
@@ -61,6 +77,21 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
                     </div>
                 </CardActions>
             </Card>
+            <Dialog open={open} onClose={handleClose} aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description">
+                <DialogTitle id="alert-dialog-title">
+                    {'Confirmação de deletar'}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        Deseja realmente excluir investidor?
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose}>MELHOR NÃO</Button>
+                    <Button onClick={handleAgreed} autoFocus>SIM</Button>
+                </DialogActions>
+            </Dialog>
         </div>
     )
 }

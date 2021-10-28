@@ -21,9 +21,13 @@ function GerenciarInvestidores(props) {
     let history = useHistory()
 
     useEffect(() => {
-        // Para abrir snackbar se os dados forem salvos com sucesso!
+        // Abrir snackbar se o props for passado
+        // o props sera passado so se os dados forem atualizados ou novo cadastro realizado com sucesso
         if(props.location.state){
-            setOpenAlert(true)
+            if(props.location.state.openSnackbar){
+                setOpenAlert(true)
+            }
+            
         }
         console.log(props)
     }, [])
@@ -46,6 +50,7 @@ function GerenciarInvestidores(props) {
           return;
         }
         setOpenAlert(false);
+        props.location.state.openSnackbar(false);
       };
 
     return (
