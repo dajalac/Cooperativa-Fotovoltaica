@@ -1,0 +1,23 @@
+@import '../../Styles/mixins';
+
+.investidoresPercentual{
+    @include flexCenter(column);
+    gap: 1rem;
+    width: 90%;
+    border-radius: 2%;
+    box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
+    padding: 10px;
+}
+
+.investidoresPercentualCard{
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+ .investidoresPercentualInfo{
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width:90%;
+    }

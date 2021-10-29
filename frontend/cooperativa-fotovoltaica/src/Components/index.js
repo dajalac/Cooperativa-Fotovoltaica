@@ -6,6 +6,9 @@ import RadioBtn from "./Inputs/RadioButtons/RadioBtn";
 import SearchInvestidores from "./Inputs/SearchInvestidores/SearchInvestidores";
 import InvestidoresCard from "./Investidores/InvestidoresCard";
 import EditarOuCadastrarForm from "./Forms/EditarOuCadastrarForm";
+import InvestidoresPercentual from "./Investidores/InvestidoresPercentual";
+import GraficoRendimentos from "./Graficos/GraficoRendimentos";
+import GraficoTempoXRendimento from "./Graficos/GraficoTempoXRendimento";
 
 
 export{Navbar,
@@ -15,4 +18,7 @@ export{Navbar,
        RadioBtn, 
        SearchInvestidores,
        InvestidoresCard,
-       EditarOuCadastrarForm}
+       EditarOuCadastrarForm,
+       InvestidoresPercentual,
+       GraficoRendimentos,
+       GraficoTempoXRendimento }

@@ -18,7 +18,7 @@ const initialState={
     investidores:investidoresFormatados ,
     investidorSelecionado:null,
     filtroAtivo:false,
-    investidoresFiltrados:null
+    investidoresFiltrados:null,
 }
 
 const investidorSlice = createSlice({
@@ -108,7 +108,7 @@ const investidorSlice = createSlice({
 
         limparFiltro:(state)=>{
             state.filtroAtivo=false;
-        }
+        },
     }
 })
 

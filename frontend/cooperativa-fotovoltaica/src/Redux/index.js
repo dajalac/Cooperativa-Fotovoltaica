@@ -6,7 +6,9 @@ import {addInvestidor,
         filtrarInvestidores,
         limparFiltro} from './InvestidorSlice'; 
 
-
+import{setUpVariables,
+        getVariavelSelecionada,
+        calcularEnergia} from './UsinaSlice';
 
 
 export {store,
@@ -15,5 +17,8 @@ export {store,
         setInvestidor,
         updateInvestidor,
         filtrarInvestidores,
-        limparFiltro}
+        limparFiltro,
+        setUpVariables,
+        getVariavelSelecionada,
+        calcularEnergia}
 

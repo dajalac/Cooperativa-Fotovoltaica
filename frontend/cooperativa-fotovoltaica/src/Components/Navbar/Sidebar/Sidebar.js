@@ -19,11 +19,11 @@ function Sidebar() {
                         </li>
                     </NavLink>
 
-                    <NavLink exact to={'/gerenciarInvestidores'} style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab">
+                    <NavLink exact to={'/rendimentos'} style={{ textDecoration: 'none' }} activeClassName="sidebarActiveTab">
                         <li className=" ">
                             <div>
                             <FaHandHoldingUsd className="sideBarIcons"/>
-                            <div>Investidores</div>
+                            <div>Rendimentos</div>
                             </div>
                         </li>
                     </NavLink>

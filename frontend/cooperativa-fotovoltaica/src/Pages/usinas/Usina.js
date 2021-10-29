@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUpVariables,getVariavelSelecionada } from '../../Redux/UsinaSlice';
+//import { setUpVariables,getVariavelSelecionada } from '../../Redux/UsinaSlice';
+import{setUpVariables, getVariavelSelecionada} from '../../Redux'
 import { GraficoTemporal } from '../../Components';
 import { InvestidoresLista,RadioBtn } from '../../Components';
 import './Usinas.scss'
@@ -19,8 +20,9 @@ function Usina() {
         dispatch(getVariavelSelecionada(input))
     }
 
-
     //TODO graph is breaking the sidebar... probably because of the responsive thing 
+
+    
 
     return (
         <div className="usina">

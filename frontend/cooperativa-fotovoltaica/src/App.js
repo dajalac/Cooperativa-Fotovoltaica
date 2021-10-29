@@ -4,7 +4,11 @@ import { useMediaQuery } from 'react-responsive';
 import { Usina } from './Pages';
 import { Navbar } from './Components';
 import { Sidebar } from './Components';
-import {GerenciarInvestidores, InvestidoresMaisInfo, EditarInvestidores, CadastrarInvestidor} from './Pages';
+import {GerenciarInvestidores,
+        InvestidoresMaisInfo,
+        EditarInvestidores, 
+        CadastrarInvestidor,
+        Rendimentos} from './Pages';
 import './App.scss';
 
 
@@ -43,6 +47,7 @@ else if (!isMobile){
           <Route exact path ='/investidorInformacao' component={InvestidoresMaisInfo}/>
           <Route exact path ='/editarInvestidores' component={EditarInvestidores}/>
           <Route exact path ='/cadastrarInvestidor' component={CadastrarInvestidor}/>
+          <Route exact path ='/rendimentos' component={Rendimentos}/>
           <Route component = {Usina}/>
           </Switch>
           </div>

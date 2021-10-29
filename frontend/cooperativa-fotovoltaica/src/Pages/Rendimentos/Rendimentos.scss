@@ -1,0 +1,40 @@
+@import '../../Styles/mixins';
+
+.rendimentos{
+    @include flexCenter(column);
+    width: 100%;
+}
+
+.rendimentosHeader{
+    @include flexCenter(column);
+    width: 95%;
+    margin: 20px 0;
+   h3{ display: flex;
+    justify-content: left;
+    width: 100%;
+   }
+}
+
+.rendimentosBody{
+    display: flex;
+    align-items: flex-start;
+   justify-content: space-around;
+    gap: 1rem;
+    width: 95%;
+}
+
+.rendimentosInvestidores{
+    @include flexCenter(column);
+   // width: 90%;
+    
+}
+
+.rendimentosGraficos{
+    @include flexCenter(column);
+    //flex-grow:1;
+    width: 70%;
+   // margin-top: 3rem;
+   gap:2rem;
+
+}
+
