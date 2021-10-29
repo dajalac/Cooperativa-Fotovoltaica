@@ -17,7 +17,8 @@ dadosClients.map((item)=>{
 const initialState={
     investidores:investidoresFormatados ,
     investidorSelecionado:null,
-    status:null
+    filtroAtivo:false,
+    investidoresFiltrados:null
 }
 
 const investidorSlice = createSlice({
@@ -28,6 +29,7 @@ const investidorSlice = createSlice({
             // TODO check se investiro ja existe
 
             //rebalancear percentual da usian
+            //Ao add novo investidor, o percentual de todos os investidores sera reduzido proporcionalmente
             const percentagem = action.payload.usina.percentual
             const valorParaBalancear = (percentagem/state.investidores.length)
             state.investidores.map((item)=>{
@@ -36,11 +38,11 @@ const investidorSlice = createSlice({
 
             // add novo investidor
             state.investidores.push(action.payload)
-            state.status ='success'
         },
 
         removerInvestidor:(state,action)=>{
             // rebalancear percentual
+            //Ao remover investidor, o percentual de todos os investidores sera aumentado proporcionalmente
             const percentagem = action.payload.usina.percentual
             const valorParaBalancear = (percentagem/(state.investidores.length-1))
             state.investidores.map((item)=>{
@@ -92,9 +94,28 @@ const investidorSlice = createSlice({
                         investidor.usina.percentual=investidorUpdated.usina.percentual;
                     }
                 })
+        },
+
+        filtrarInvestidores:(state,action)=>{
+            const valorDeBusca = action.payload.toLowerCase();
+
+           state.investidoresFiltrados= state.investidores.filter(investidor =>{
+                      return (investidor.nome.toLowerCase().includes(valorDeBusca))
+            })
+
+            state.filtroAtivo=true;
+        },
+
+        limparFiltro:(state)=>{
+            state.filtroAtivo=false;
         }
     }
 })
 
-export const {addInvestidor,removerInvestidor,setInvestidor,updateInvestidor} = investidorSlice.actions
+export const {addInvestidor,
+              removerInvestidor,
+              setInvestidor,
+              updateInvestidor,
+              filtrarInvestidores,
+              limparFiltro} = investidorSlice.actions
 export default investidorSlice.reducer; 
