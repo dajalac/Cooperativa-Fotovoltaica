@@ -51,7 +51,8 @@ function SearchInvestidores({ handleProcurarInvestidor, handleRemoverFiltro }) {
                             </InputAdornment>
                         ),
                     }}
-                    variant="outlined" />
+                    variant="outlined"
+                    sx={{backgroundColor:'white'}} />
 
                 <Button variant="contained" color="success" sx={{ height: '100%' }} onClick={onSearch}> Procurar </Button>
             </div>

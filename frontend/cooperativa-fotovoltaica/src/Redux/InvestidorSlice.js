@@ -8,7 +8,7 @@ const investidoresFormatados =[]
 dadosClients.map((item)=>{
     investidoresFormatados.push({id: item.numeroCliente, 
         nome:item.nomeCliente, 
-        telefone: '(55) ' +Math.floor(9000 + Math.random() * 100000)+'-'+Math.floor(1000 + Math.random() * 1000),
+        telefone: '+55(51) ' +Math.floor(9000 + Math.random() * 100000)+'-'+Math.floor(1000 + Math.random() * 1000),
         email:item.nomeCliente.substring(0, 2).toLocaleLowerCase() +'@gmail.com',
         endereco:'Ave. Principal '+Math.floor(Math.random() * 100)+', Canoas, RS',
         color:'#'+Math.floor(Math.random()*16777215).toString(16), //avatar color

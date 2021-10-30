@@ -49,13 +49,12 @@ function App() {
               <Route exact path='/' component={Usina} />
               <Route exact path='/rendimentos' component={Rendimentos} />
               <Route exact path='/gerenciarInvestidores' component={GerenciarInvestidores} />
+              <Route exact path='/cadastrarInvestidor' component={CadastrarInvestidor} />
               {investidorSelecionado &&
                  // Os routes abaixo so vai existir se um investidor estiver selecionado
                 <div>
                   <Route exact path='/investidorInformacao' component={InvestidoresMaisInfo} />
                   <Route exact path='/editarInvestidores' component={EditarInvestidores} />
-                  <Route exact path='/cadastrarInvestidor' component={CadastrarInvestidor} />
-
                 </div>
               }
               <Route component={Usina} />

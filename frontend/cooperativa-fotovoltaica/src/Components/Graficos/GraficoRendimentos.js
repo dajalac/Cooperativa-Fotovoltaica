@@ -28,19 +28,19 @@ function GraficoRendimentos({data}) {
                      left: 10,
                      bottom: 20,
                  }}>
-                    
+        
                     <XAxis dataKey="nome">
                         <Label value="Investidores" position="bottom" />
                     </XAxis>
 
+
                     <YAxis  tick={{ fontSize: 12 }}
-                            label={{ value: 'Rendimento em real', angle: -90, position:'left',dy:-50}}
+                            label={{ value: 'Rendimento em reais', angle: -90, position:'left',dy:-50}}
                             tickFormatter={formatarValorParaReal}
                             offset={15}  
                             
                      />
-                    <Tooltip />
-                    <Bar dataKey="rendimento" fill="#8884d8" label={{ position: 'top',formatter:formatarValorParaReal}} />
+                    <Bar dataKey="rendimento" fillOpacity={0.8} fill="#82ca9d" label={{ position: 'top',formatter:formatarValorParaReal}} />
                 </BarChart>
             </ResponsiveContainer>
         </div>
@@ -48,3 +48,5 @@ function GraficoRendimentos({data}) {
 }
 
 export default GraficoRendimentos
+
+//#718355

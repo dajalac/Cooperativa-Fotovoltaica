@@ -15,6 +15,7 @@ import {FaPen,FaTrashAlt } from 'react-icons/fa';
 
 import './InvestidoresCard.scss';
 
+
 const getNameToAvatar = (name) => {
     const nameInitials = []
     const nameSlipted = name.split(' ')
@@ -71,7 +72,7 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
                     </div>
                 </CardContent>
                 <CardActions className="investidoresCardActions">
-                    <Button size="small" onClick={handleVerMaisBtn}>Ver mais</Button>
+                    <Button  size="small" onClick={handleVerMaisBtn}>Ver mais</Button>
                     <div>
                     <FaPen className="investidoresCardIcons" onClick={handleEditarInvestidor}/>
                     <FaTrashAlt className="investidoresCardIcons" onClick={handleDeletarInvestidor} />

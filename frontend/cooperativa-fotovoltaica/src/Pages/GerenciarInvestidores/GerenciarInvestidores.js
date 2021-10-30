@@ -5,7 +5,8 @@ import { removerInvestidor, setInvestidor, filtrarInvestidores,limparFiltro,limp
 import { InvestidoresCard, SearchInvestidores } from '../../Components';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import './GerenciarInvestidores.scss'
+import {IoAdd} from "react-icons/io5";
+import './GerenciarInvestidores.scss';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -86,7 +87,8 @@ function GerenciarInvestidores(props) {
         <div className="gerenciarInvestidores">
             <SearchInvestidores handleProcurarInvestidor={handleProcurarInvestidor} handleRemoverFiltro={handleRemoverFiltro} />
             <div className="gerenciarInvestidoresNovoInvest">
-                <p onClick={handleNovoInvestidor}> Adicionar investidor</p>
+                <p onClick={handleNovoInvestidor}> 
+                <IoAdd/>Adicionar investidor</p>
             </div>
             <div className="gerenciarInvestidoresCard">
                 {displayInvestidoresCards()}

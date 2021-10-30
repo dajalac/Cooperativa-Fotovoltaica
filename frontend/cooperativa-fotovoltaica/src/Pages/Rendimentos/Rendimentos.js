@@ -21,13 +21,15 @@ function Rendimentos() {
 
     const onToggleBtn=()=>{
         setToggleBtn(!toggleBtn)
-        
-        if(toggleBtn){
+
+        if(!toggleBtn){
             setBtnText('Ver rendimento por hora')
         }else{
             setBtnText('Ver rendimento por investidor')
         }
     }
+
+    
 
     const formatarValorParaReal = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
