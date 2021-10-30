@@ -10,6 +10,7 @@ import './Usinas.scss'
 function Usina() {
     const dispatch = useDispatch();
     const {variavelResposta} = useSelector((state) => state.usinaInfo)
+    const { investidores} = useSelector((state) => state.investidor)
 
     useEffect(() => {
         dispatch(setUpVariables())
@@ -36,7 +37,7 @@ function Usina() {
                     <RadioBtn setVariavelSelecionada={setVariavelSelecionada}/>
                     <p>Selecione qual variavel deseja explorar</p>
                 </div>
-                <InvestidoresLista/>
+                <InvestidoresLista investidores={investidores}/>
             </div>
         </div>
     )

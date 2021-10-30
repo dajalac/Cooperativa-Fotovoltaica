@@ -37,8 +37,7 @@ function InvestidoresPercentual({ investidores }) {
             {investidores.map((investidor) => {
 
                 const props = {value:investidor.usina.percentual};
-              return(  <div className="investidoresPercentualCard">
-                    <Avatar sx={{ bgcolor: '#66bb6a' }}>{getNameToAvatar(investidor.nome)}</Avatar>
+              return( 
                     <div className="investidoresPercentualInfo">
                         <Typography variant="body1" color="text.secondary">{investidor.nome}</Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', width: '100% ' }}>
@@ -54,8 +53,7 @@ function InvestidoresPercentual({ investidores }) {
                             </Box>
                         </Box>
                     </div>
-
-                </div> )
+ )
             })}
 
         </div>

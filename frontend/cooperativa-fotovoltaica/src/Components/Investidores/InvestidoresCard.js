@@ -65,7 +65,7 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
                         Nome: {investidor.nome}
                     </Typography>
                     <Typography variant="body1">
-                        Participacao: {investidor.usina.percentual}%
+                        Participacao: {Math.round((investidor.usina.percentual + Number.EPSILON) * 100) / 100}%
                     </Typography>
                     </div>
                 </CardContent>

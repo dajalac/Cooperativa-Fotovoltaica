@@ -13,10 +13,17 @@
     width: 120px;/*Do I need it here?*/
     margin: 3px;
     height: 36px;
-    //box-shadow: 1px 1px 1px  rgb(0,0,0.4);
     box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
     border: none;
     border-radius: 1rem;
+
+    // input[type=radio]{
+    //     &:checked + .radioBtnCheckmark{
+    //         background-color:#1565c0;
+    //         border-radius: 1rem;
+    //         color: white;}
+    // }
+
 }
 
 .radioBtnCheckmark{
@@ -28,11 +35,18 @@
 
 }
 
-.radioBtnContainer input:checked + .radioBtnCheckmark{
+input[type=radio]:checked + .radioBtnCheckmark{
     background-color:#1565c0;
     border-radius: 1rem;
     color: white;
 }
+
+// .radioBtnContainer input:checked + .radioBtnCheckmark{
+//     background-color:#1565c0;
+//     border-radius: 1rem;
+//     color: white;
+// }
+
 
 @media(max-width:940px){
     .radionBtns{

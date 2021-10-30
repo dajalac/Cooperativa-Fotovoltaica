@@ -1,5 +1,4 @@
 import React from 'react';
-import investidores from '../../Utils/dadosClientes.json'
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -10,7 +9,7 @@ import Divider from '@mui/material/Divider';
 import './InvestidoresLista.scss'
 
 
-const displayList = () => {
+const displayList = (investidores) => {
     const avatarColors =['#5c6bc0','#ffc107','#ff7043']
     //avatarColors[Math.floor(Math.random()*avatarColors.length)]}
     let toDisplay = []
@@ -25,9 +24,9 @@ const displayList = () => {
                     <ListItem>
                         <ListItemAvatar>
                             <Avatar sx={{bgcolor:'#66bb6a'}}>
-                                {getNameToAvatar(individuo.nomeCliente)}</Avatar>
+                                {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={individuo.nomeCliente} />
+                        <ListItemText primary={individuo.nome} />
                     </ListItem>
                 </div>)
         } else {
@@ -36,9 +35,9 @@ const displayList = () => {
                     <ListItem>
                         <ListItemAvatar >
                             <Avatar sx={{bgcolor:avatarColors[index]}}>
-                                {getNameToAvatar(individuo.nomeCliente)}</Avatar>
+                                {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
-                        <ListItemText primary={individuo.nomeCliente} />
+                        <ListItemText primary={individuo.nome} />
                     </ListItem>
                     <Divider variant="inset" component="li" />
                 </div>)
@@ -63,7 +62,7 @@ const getNameToAvatar = (name) => {
     return nameInitials.join('')
 
 }
-function InvestidoresLista() {
+function InvestidoresLista({investidores}) {
     return (
         <div className="investidoresLista">
             <h4>Investidores:</h4>
@@ -74,7 +73,7 @@ function InvestidoresLista() {
                     bgcolor: 'background.paper',
                 }}
             >
-                {displayList()}
+                {displayList(investidores)}
             </List>
             <br />
         </div>

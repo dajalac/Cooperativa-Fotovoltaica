@@ -14,6 +14,7 @@ dadosClients.map((item)=>{
             usinaId:item.usinas[0].usinaId,
             percentual:item.usinas[0].percentualDeParticipacao} })
 })
+
 const initialState={
     investidores:investidoresFormatados ,
     investidorSelecionado:null,
@@ -68,7 +69,7 @@ const investidorSlice = createSlice({
 
             if(novoPercentual > antigoPercentual){
                 //remove percentual dos outros investidores pq o cliente desejou aumentar seus investimentos
-                const percentagem= - novoPercentual - antigoPercentual
+                const percentagem= novoPercentual - antigoPercentual
                 const valorParaBalancear = (percentagem/(state.investidores.length -1))
                 state.investidores.map((item)=>{
                     item.usina.percentual= (item.usina.percentual - valorParaBalancear)

@@ -36,12 +36,12 @@ function EditarOuCadastrarForm({ handleSave, investidor}) {
 
 
     const reduzirPercentual = () => {
-        const novoValor = investimento - 1;
+        const novoValor = parseInt(investimento) - 1;
         setInvestimento(novoValor)
     }
 
     const adiconarPercentual = () => {
-        const novoValor = investimento + 1;
+        const novoValor = parseInt(investimento) + 1;
         setInvestimento(novoValor)
     }
 

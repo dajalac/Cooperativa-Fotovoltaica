@@ -19,7 +19,7 @@ dadosUsina.map((item)=>{
 
 const initialState = {
     dadosFormatados:dadosFormatado,
-    variavelResposta:'tensao_V',
+    variavelResposta:'potencia_kW',
     //energiaLista: [],
     energiaNoDia: 0,
     receitaTotal:0,
