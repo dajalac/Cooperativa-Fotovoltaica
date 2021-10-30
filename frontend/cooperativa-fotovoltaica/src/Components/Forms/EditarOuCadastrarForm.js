@@ -119,6 +119,7 @@ function EditarOuCadastrarForm({ handleSave, investidor}) {
                 telefone: telefone,
                 email: email.valor,
                 endereco: endereco.valor,
+                color:'#'+Math.floor(Math.random()*16777215).toString(16),
                 usina: {
                     id: 1,
                     percentual: investimento

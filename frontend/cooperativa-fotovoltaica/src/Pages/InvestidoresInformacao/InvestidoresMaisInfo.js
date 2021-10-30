@@ -10,8 +10,20 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { FaPen, FaTrashAlt } from 'react-icons/fa';
+import { FaPen, FaTrashAlt,FaArrowLeft } from 'react-icons/fa';
 import './InvestidoresMaisInfo.scss';
+
+const getNameToAvatar = (name) => {
+    const nameInitials = []
+    const nameSlipted = name.split(' ')
+
+    nameSlipted.map(name => {
+        nameInitials.push(name.charAt(0))
+    })
+
+    return nameInitials.join('')
+
+}
 
 function InvestidoresMaisInfo() {
     const [open, setOpen] = useState(false);
@@ -34,16 +46,23 @@ function InvestidoresMaisInfo() {
     const handleAgreed = () => {
         setOpen(false);
         dispatch(removerInvestidor(investidorSelecionado))
-        history.push('/gerenciarInvestidores')
+        history.push('/gerenciarInvestidores');
     }
     const handleClose = () => {
         setOpen(false);
     };
+
+    const handleVoltar=()=>{
+        history.push('/gerenciarInvestidores');
+    }
     return (
         <div className="investidoresMaisInfo">
+            <div className="investidoresMaisInfoVoltar" onClick={handleVoltar}><FaArrowLeft/> Voltar</div>
             <div className="investidoresMaisInfoCard">
                 <div className="investidoresMaisInfoHeader">
-                    <Avatar sx={{ width: 86, height: 86, bgcolor: '#ffc107' }} >AP </Avatar>
+                    <Avatar sx={{ width: 86, height: 86, bgcolor: investidorSelecionado.color }}>
+                        {getNameToAvatar(investidorSelecionado.nome)} 
+                    </Avatar>
                     <Button variant="outlined" fullWidth startIcon={<FaPen />} onClick={handleEditarInvestidor}> Editar </Button>
                     <Button variant="outlined" fullWidth startIcon={<FaTrashAlt />} onClick={handleDeletarInvestidor}> Excluir </Button>
                 </div>
@@ -75,9 +94,7 @@ function InvestidoresMaisInfo() {
                         <Typography variant="body1" component="div">
                             Percentual de participação: {investidorSelecionado.usina.percentual}%
                         </Typography>
-                        <Typography variant="body1" component="div">
-                            Investidor(a) desde 01/05/2012
-                        </Typography>
+                       
                     </div>
 
                 </div >

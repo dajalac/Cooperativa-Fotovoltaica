@@ -10,8 +10,6 @@ import './InvestidoresLista.scss'
 
 
 const displayList = (investidores) => {
-    const avatarColors =['#5c6bc0','#ffc107','#ff7043']
-    //avatarColors[Math.floor(Math.random()*avatarColors.length)]}
     let toDisplay = []
 
 
@@ -23,7 +21,7 @@ const displayList = (investidores) => {
                 <div>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar sx={{bgcolor:'#66bb6a'}}>
+                            <Avatar sx={{bgcolor:individuo.color}}>
                                 {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={individuo.nome} />
@@ -34,7 +32,7 @@ const displayList = (investidores) => {
                 <div>
                     <ListItem>
                         <ListItemAvatar >
-                            <Avatar sx={{bgcolor:avatarColors[index]}}>
+                            <Avatar sx={{bgcolor:individuo.color}}>
                                 {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={individuo.nome} />

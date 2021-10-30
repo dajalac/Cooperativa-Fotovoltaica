@@ -1,8 +1,19 @@
 @import '../../Styles/mixins';
+@import '../../Styles/variables';
 
 .investidoresMaisInfo{
     @include flexCenter(column);
-    margin-top: 3rem;
+    margin-top: 2rem;
+}
+
+.investidoresMaisInfoVoltar{
+    @include flexCenter(row);
+    justify-content: flex-start;
+    gap: 5px;
+    width: 90%;
+    margin-bottom: 1rem;
+    color:#9e9e9e;
+
 }
 
 .investidoresMaisInfoCard{

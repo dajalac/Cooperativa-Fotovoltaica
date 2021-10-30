@@ -4,7 +4,8 @@ import {addInvestidor,
         setInvestidor,
         updateInvestidor,
         filtrarInvestidores,
-        limparFiltro} from './InvestidorSlice'; 
+        limparFiltro,
+        limparInvestidorSelecionado} from './InvestidorSlice'; 
 
 import{setUpVariables,
         getVariavelSelecionada,
@@ -20,5 +21,6 @@ export {store,
         limparFiltro,
         setUpVariables,
         getVariavelSelecionada,
-        calcularEnergia}
+        calcularEnergia,
+        limparInvestidorSelecionado}
 

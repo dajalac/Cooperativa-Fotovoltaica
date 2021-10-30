@@ -4,12 +4,14 @@ import dadosClients from '../Utils/dadosClientes.json';
 //para formatar as informacoes does clientes
 // Assim posso inserir novos campos sem editar a dase de dados original 
 const investidoresFormatados =[]
+
 dadosClients.map((item)=>{
     investidoresFormatados.push({id: item.numeroCliente, 
         nome:item.nomeCliente, 
-        telefone:null, 
-        email:null,
-        endereco:null,
+        telefone: '(55) ' +Math.floor(9000 + Math.random() * 100000)+'-'+Math.floor(1000 + Math.random() * 1000),
+        email:item.nomeCliente.substring(0, 2).toLocaleLowerCase() +'@gmail.com',
+        endereco:'Ave. Principal '+Math.floor(Math.random() * 100)+', Canoas, RS',
+        color:'#'+Math.floor(Math.random()*16777215).toString(16), //avatar color
         usina:{
             usinaId:item.usinas[0].usinaId,
             percentual:item.usinas[0].percentualDeParticipacao} })
@@ -54,10 +56,17 @@ const investidorSlice = createSlice({
            state.investidores= state.investidores.filter((item)=>{
                     return item.id !== action.payload.id
             })
+
+            // // Limpar investidor selecionado
+            state.investidorSelecionado=null
         },
 
         setInvestidor:(state,action)=>{
             state.investidorSelecionado=action.payload
+        },
+
+        limparInvestidorSelecionado:(state)=>{
+            state.investidorSelecionado=null;
         },
 
         updateInvestidor:(state,action)=>{
@@ -95,6 +104,9 @@ const investidorSlice = createSlice({
                         investidor.usina.percentual=investidorUpdated.usina.percentual;
                     }
                 })
+
+            // // Limpar investidor selecionado
+            // state.investidorSelecionado=null
         },
 
         filtrarInvestidores:(state,action)=>{
@@ -118,5 +130,6 @@ export const {addInvestidor,
               setInvestidor,
               updateInvestidor,
               filtrarInvestidores,
-              limparFiltro} = investidorSlice.actions
+              limparFiltro,
+              limparInvestidorSelecionado} = investidorSlice.actions
 export default investidorSlice.reducer; 

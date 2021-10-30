@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { removerInvestidor, setInvestidor, filtrarInvestidores,limparFiltro } from '../../Redux';
+import { removerInvestidor, setInvestidor, filtrarInvestidores,limparFiltro,limparInvestidorSelecionado } from '../../Redux';
 import { InvestidoresCard, SearchInvestidores } from '../../Components';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
@@ -10,7 +10,6 @@ import './GerenciarInvestidores.scss'
 const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-
 
 
 function GerenciarInvestidores(props) {
@@ -29,7 +28,9 @@ function GerenciarInvestidores(props) {
             }
 
         }
-        console.log(props)
+       
+        // para reset investidor selecionado, caso tenha um
+        dispatch(limparInvestidorSelecionado());
     }, [])
 
     const handleProcurarInvestidor = (nome) => {

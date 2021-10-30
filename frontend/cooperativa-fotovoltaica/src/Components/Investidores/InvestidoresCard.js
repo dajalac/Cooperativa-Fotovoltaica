@@ -54,11 +54,12 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
     const handleClose = () => {
         setOpen(false);
     };
+
     return (
         <div>
             <Card className="investidoresCard" sx={{ minWidth: 275 }}>
                 <CardContent className="investidoresCardContent">
-                    <Avatar sx={{ width: 56, height: 56, bgcolor: '#ffc107' }} >
+                    <Avatar sx={{ width: 56, height: 56, bgcolor:investidor.color }} >
                         {getNameToAvatar(investidor.nome)} </Avatar>
                      <div className="investidoresCardInfo">  
                     <Typography variant="body1" component="div">
