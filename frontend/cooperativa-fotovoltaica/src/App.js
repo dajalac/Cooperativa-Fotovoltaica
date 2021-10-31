@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
-import { Usina } from './Pages';
-import { Navbar } from './Components';
-import { Sidebar } from './Components';
+import { Navbar, Sidebar } from './Components';
 import {
+  Usina,
   GerenciarInvestidores,
   InvestidoresMaisInfo,
   EditarInvestidores,

@@ -56,6 +56,11 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
         setOpen(false);
     };
 
+    const formatPercentual =()=>{
+        const percentual = parseInt(investidor.usina.percentual)
+        return Math.round((percentual + Number.EPSILON) * 100) / 100
+    }
+
     return (
         <div>
             <Card className="investidoresCard" sx={{ minWidth: 275 }}>
@@ -67,7 +72,7 @@ function InvestidoresCard({investidor, aoDeletarInvestidor,setInvestidoParaEdita
                         Nome: {investidor.nome}
                     </Typography>
                     <Typography variant="body1">
-                        Participacao: {Math.round((investidor.usina.percentual + Number.EPSILON) * 100) / 100}%
+                        Participacao: {formatPercentual()}%
                     </Typography>
                     </div>
                 </CardContent>

@@ -23,16 +23,14 @@ function GraficoRendimentos({data}) {
                 <BarChart
                  data={data}
                  margin={{
-                     top: 5,
+                     top: 15,
                      right: 10,
                      left: 10,
                      bottom: 20,
                  }}>
-        
                     <XAxis dataKey="nome">
                         <Label value="Investidores" position="bottom" />
                     </XAxis>
-
 
                     <YAxis  tick={{ fontSize: 12 }}
                             label={{ value: 'Rendimento em reais', angle: -90, position:'left',dy:-50}}
@@ -40,7 +38,7 @@ function GraficoRendimentos({data}) {
                             offset={15}  
                             
                      />
-                    <Bar dataKey="rendimento" fillOpacity={0.8} fill="#82ca9d" label={{ position: 'top',formatter:formatarValorParaReal}} />
+                    <Bar dataKey="rendimento" fill="#718355" label={{ position: 'top',formatter:formatarValorParaReal}} />
                 </BarChart>
             </ResponsiveContainer>
         </div>

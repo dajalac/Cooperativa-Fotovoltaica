@@ -22,5 +22,6 @@ export {store,
         setUpVariables,
         getVariavelSelecionada,
         calcularEnergia,
-        limparInvestidorSelecionado}
+        limparInvestidorSelecionado
+      }
 

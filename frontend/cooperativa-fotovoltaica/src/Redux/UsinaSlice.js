@@ -20,11 +20,11 @@ dadosUsina.map((item)=>{
 const initialState = {
     dadosFormatados:dadosFormatado,
     variavelResposta:'potencia_kW',
-    //energiaLista: [],
     energiaNoDia: 0,
     receitaTotal:0,
     rendimentos:[],
-    rendimentosPorhora:[]
+    rendimentosPorhora:[],
+ 
 };
 
 
@@ -74,6 +74,7 @@ const usinaSlice = createSlice({
 
             
         },
+       
         
     }
 })

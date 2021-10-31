@@ -21,10 +21,6 @@ function Usina() {
         dispatch(getVariavelSelecionada(input))
     }
 
-    //TODO graph is breaking the sidebar... probably because of the responsive thing 
-
-    
-
     return (
         <div className="usina">
             <div className="usinaHeader">
@@ -34,7 +30,7 @@ function Usina() {
             <div className="usinaBoby">
                 <div className="usinaGraph">
                     <GraficoTemporal variavelResposta={variavelResposta} />
-                    <RadioBtn setVariavelSelecionada={setVariavelSelecionada}/>
+                    <RadioBtn setVariavelSelecionada={setVariavelSelecionada} />
                     <p>Selecione qual variavel deseja explorar</p>
                 </div>
                 <InvestidoresLista investidores={investidores}/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Label, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Label, ResponsiveContainer } from 'recharts';
 import './GraficoTempoXRendimento.scss';
 
 const formatarTempo = (tempo) => {
@@ -14,13 +14,14 @@ const formato = new Intl.NumberFormat('pt-BR', {
 
 });
 
-const formatarValorParaReal =(entry)=>{
+const formatarValorParaReal = (entry) => {
     return formato.format(entry)
-    
+
 }
 
 
 function GraficoTempoXRendimento({ data }) {
+
     return (
         <div className="GraficoTempoXRendimento">
             <ResponsiveContainer width="90%" height="90%">
@@ -39,16 +40,21 @@ function GraficoTempoXRendimento({ data }) {
                         tick={{ fontSize: 12 }}
                         dataKey="hora">
 
-                    <Label value="Horas" position="bottom" />
+                        <Label value="Horas" position="bottom" />
 
                     </XAxis>
-            
-                    <YAxis 
-                        label={{ value: 'Rendimento em real', angle: -90, position: 'left',dy:-50}}
-                        tickFormatter={formatarValorParaReal} 
+
+                    <YAxis
+                        label={{ value: 'Rendimento em real', angle: -90, position: 'left', dy: -50 }}
+                        tickFormatter={formatarValorParaReal}
                         tick={{ fontSize: 12 }} />
-                    <Tooltip />
-                    <Line type="monotone" dataKey="retorno" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Tooltip formatter={function (value) {
+                        return formatarValorParaReal(value);
+                    }}
+                        labelFormatter={function (value) {
+                            return 'Horário: ' + formatarTempo(value)
+                        }} />
+                    <Line type="monotone" dataKey="retorno" name="Rendimento" stroke="#1b5e20" activeDot={{ r: 8 }} />
                 </LineChart>
             </ResponsiveContainer>
         </div>
