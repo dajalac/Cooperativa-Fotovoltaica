@@ -1,32 +1,8 @@
 import React from 'react';
-
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
-
-
-import './InvestidoresPercentual.scss'
-import { ListItemIcon, ListSubheader } from '@mui/material';
-
-
-
-const getNameToAvatar = (name) => {
-    const nameInitials = []
-    const nameSlipted = name.split(' ')
-
-    nameSlipted.map(name => {
-        nameInitials.push(name.charAt(0))
-    })
-
-    return nameInitials.join('')
-
-}
+import './InvestidoresPercentual.scss';
 
 
 function InvestidoresPercentual({ investidores }) {
@@ -36,8 +12,8 @@ function InvestidoresPercentual({ investidores }) {
             <h5>Percentual de cada investidor</h5>
             {investidores.map((investidor) => {
 
-                const props = {value:investidor.usina.percentual};
-              return( 
+                const props = { value: investidor.usina.percentual };
+                return (
                     <div className="investidoresPercentualInfo">
                         <Typography variant="body1" color="text.secondary">{investidor.nome}</Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', width: '100% ' }}>
@@ -53,11 +29,10 @@ function InvestidoresPercentual({ investidores }) {
                             </Box>
                         </Box>
                     </div>
- )
+                )
             })}
 
         </div>
-
 
 
     )

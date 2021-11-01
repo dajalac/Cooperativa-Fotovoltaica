@@ -29,9 +29,6 @@ function InvestidoresMaisInfo() {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
     const { investidorSelecionado } = useSelector((state) => state.investidor)
-
-    //const investidor = props.location.state.investidorSelecionado //props recebido pelo history.push
-    // const aoDeletar = props.location.state.onDeletar
     let history = useHistory()
 
     const handleEditarInvestidor = () => {

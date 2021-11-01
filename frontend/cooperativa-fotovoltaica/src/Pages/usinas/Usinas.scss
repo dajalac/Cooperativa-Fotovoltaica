@@ -28,10 +28,9 @@
 
 .usinaGraph{
     @include flexCenter(column);
-    flex-grow:1;
-    
+    flex-grow:1; 
     margin-top: 3rem;
-    //width: 60%;
+ 
 }
 
 @media(max-width:940px){

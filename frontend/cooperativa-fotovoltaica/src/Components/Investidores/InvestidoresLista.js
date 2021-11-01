@@ -1,5 +1,4 @@
 import React from 'react';
-
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -21,7 +20,7 @@ const displayList = (investidores) => {
                 <div>
                     <ListItem>
                         <ListItemAvatar>
-                            <Avatar sx={{bgcolor:individuo.color}}>
+                            <Avatar sx={{ bgcolor: individuo.color }}>
                                 {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={individuo.nome} />
@@ -32,7 +31,7 @@ const displayList = (investidores) => {
                 <div>
                     <ListItem>
                         <ListItemAvatar >
-                            <Avatar sx={{bgcolor:individuo.color}}>
+                            <Avatar sx={{ bgcolor: individuo.color }}>
                                 {getNameToAvatar(individuo.nome)}</Avatar>
                         </ListItemAvatar>
                         <ListItemText primary={individuo.nome} />
@@ -60,7 +59,7 @@ const getNameToAvatar = (name) => {
     return nameInitials.join('')
 
 }
-function InvestidoresLista({investidores}) {
+function InvestidoresLista({ investidores }) {
     return (
         <div className="investidoresLista">
             <h4>Investidores:</h4>

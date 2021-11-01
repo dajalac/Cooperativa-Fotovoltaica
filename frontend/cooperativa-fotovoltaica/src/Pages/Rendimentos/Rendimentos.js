@@ -3,7 +3,6 @@ import { useSelector, useDispatch,} from 'react-redux';
 import { calcularEnergia,setUpVariables} from '../../Redux';
 import { InvestidoresPercentual, GraficoRendimentos,GraficoTempoXRendimento } from '../../Components';
 import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 
 import './Rendimentos.scss'
 

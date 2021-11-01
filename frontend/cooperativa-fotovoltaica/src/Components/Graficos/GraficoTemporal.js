@@ -68,4 +68,3 @@ function GraficoTemporal({ variavelResposta }) {
 }
 
 export default GraficoTemporal
-//scale="time"

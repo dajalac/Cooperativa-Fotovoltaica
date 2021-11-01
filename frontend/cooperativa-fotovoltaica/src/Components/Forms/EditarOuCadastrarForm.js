@@ -6,13 +6,12 @@ import PhoneInput from 'react-phone-number-input';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { IoAdd, IoRemove } from "react-icons/io5";
-
 import 'react-phone-number-input/style.css';
 import './EditarOuCadastrarForm.scss';
 
 
 
-function EditarOuCadastrarForm({ handleSave, investidor}) {
+function EditarOuCadastrarForm({ handleSave, investidor }) {
     const valorInicial = { valor: '', erro: false, erroMsg: ' ' };
     const [nome, setNome] = useState(valorInicial);
     const [email, setEmail] = useState(valorInicial);
@@ -119,7 +118,7 @@ function EditarOuCadastrarForm({ handleSave, investidor}) {
                 telefone: telefone,
                 email: email.valor,
                 endereco: endereco.valor,
-                color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                color: '#' + Math.floor(Math.random() * 16777215).toString(16),
                 usina: {
                     id: 1,
                     percentual: investimento
@@ -144,11 +143,11 @@ function EditarOuCadastrarForm({ handleSave, investidor}) {
             handleSave(edicoes)
         }
 
-       history.push({pathname:'/gerenciarInvestidores',state:{openSnackbar:true}});
-       
+        history.push({ pathname: '/gerenciarInvestidores', state: { openSnackbar: true } });
+
     }
 
-    const onCancel=()=>{
+    const onCancel = () => {
         history.push('/gerenciarInvestidores')
     }
 
@@ -204,7 +203,7 @@ function EditarOuCadastrarForm({ handleSave, investidor}) {
                 <Button variant="outlined" fullWidth onClick={onCancel}> Cancelar </Button>
                 <Button variant="contained" fullWidth onClick={onSave} disabled={desabilitarSaveBtn()}> Salvar </Button>
             </div>
-          
+
         </div>
 
 

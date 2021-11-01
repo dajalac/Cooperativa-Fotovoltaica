@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-//import { setUpVariables,getVariavelSelecionada } from '../../Redux/UsinaSlice';
 import{setUpVariables, getVariavelSelecionada} from '../../Redux'
 import { GraficoTemporal } from '../../Components';
 import { InvestidoresLista,RadioBtn } from '../../Components';
