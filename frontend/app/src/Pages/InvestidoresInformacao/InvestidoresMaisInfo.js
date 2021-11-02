@@ -86,7 +86,7 @@ function InvestidoresMaisInfo() {
                             Usina Solto Maior
                         </Typography>
                         <Typography variant="body1" component="div">
-                            Endereço: Rua dos Milagres, 23, Salvador, BA
+                            Endereço: Ave. Palmares 123, São Francisco, RS
                         </Typography>
                         <Typography variant="body1" component="div">
                             Percentual de participação: {investidorSelecionado.usina.percentual}%
