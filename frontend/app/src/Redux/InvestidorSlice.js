@@ -59,11 +59,12 @@ const investidorSlice = createSlice({
                 return item.id !== action.payload.id
             })
 
-            // remove item se estiver com filtro ativo
-            state.investidoresFiltrados = state.investidoresFiltrados.filter((item) => {
-                return item.id !== action.payload.id
-            })
-
+              // remove item se estiver com filtro ativo
+              if(state.filtroAtivo){
+                state.investidoresFiltrados= state.investidoresFiltrados.filter((item)=>{
+                    return item.id !== action.payload.id
+                 })
+            }
             // // Limpar investidor selecionado
             state.investidorSelecionado = null
         },
