@@ -11,7 +11,7 @@ import './EditarOuCadastrarForm.scss';
 
 
 
-function EditarOuCadastrarForm({ handleSave, investidor }) {
+function EditarOuCadastrarForm({ handleSave, investidor,handleRemoverFiltro }) {
     const valorInicial = { valor: '', erro: false, erroMsg: ' ' };
     const [nome, setNome] = useState(valorInicial);
     const [email, setEmail] = useState(valorInicial);
@@ -140,7 +140,8 @@ function EditarOuCadastrarForm({ handleSave, investidor }) {
                 }
             }
 
-            handleSave(edicoes)
+            handleSave(edicoes);
+            handleRemoverFiltro(); // caso o filtro esteja ativo
         }
 
         history.push({ pathname: '/gerenciarInvestidores', state: { openSnackbar: true } });
