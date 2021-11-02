@@ -1,0 +1,23 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.AppContainer{
+  display: flex;
+  margin-top: 56px;
+  background-color:#fefefa;//#fffde7;
+}
+
+.AppScreens{
+  align-items: center;
+  width: 100vw;
+  flex-grow:1;
+}
+
+

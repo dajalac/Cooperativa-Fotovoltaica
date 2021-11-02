@@ -1,0 +1,46 @@
+@import '../../Styles/mixins';
+
+.usina{
+    @include flexCenter(column);
+    width: 100%;
+}
+
+.usinaHeader{
+    @include flexCenter(column);
+    width: 95%;
+    margin: 20px 0;
+
+    h2, div{
+        display: flex;
+        justify-content: left;
+        width: 100%;
+        margin:0;
+    }
+    
+}
+
+.usinaBoby{
+    @include flexCenter(row);
+    justify-content:space-between;
+    width: 95%;
+    
+}
+
+.usinaGraph{
+    @include flexCenter(column);
+    flex-grow:1; 
+    margin-top: 3rem;
+ 
+}
+
+@media(max-width:940px){
+    .usinaBoby{
+        @include flexCenter(column);
+        gap: 3rem;
+        width: 100%;
+    }
+    .usinaGraph{
+        width: 100%;
+    }
+
+}

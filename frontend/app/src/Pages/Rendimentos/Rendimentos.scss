@@ -1,0 +1,61 @@
+@import '../../Styles/mixins';
+
+.rendimentos{
+    @include flexCenter(column);
+    width: 100%;
+}
+
+.rendimentosHeader{
+    @include flexCenter(row);
+    justify-content: left;
+    width: 95%;
+    gap: 1rem;
+    margin: 20px 0;
+
+    div, h3{ display: flex;
+    justify-content: left;
+    padding: 0;
+   }
+}
+
+.rendimentosBtn{
+    @include flexCenter(row);
+    justify-content: right;
+    width: 90%;
+}
+
+.rendimentosBody{
+    display: flex;
+    align-items: flex-start;
+   justify-content: space-around;
+    gap: 1rem;
+    width: 95%;
+}
+
+.rendimentosInvestidores{
+    @include flexCenter(column);
+ 
+    
+}
+
+.rendimentosGraficos{
+    @include flexCenter(column);
+    width: 70%;
+   gap:2rem;
+
+}
+
+@media(max-width:650px){
+  
+  .rendimentosBody{
+    @include flexCenter(column);
+  }
+  .rendimentosGraficos{
+      width: 100%;
+  }
+  .rendimentosBtn{
+    justify-content: center;
+    
+}
+}
+

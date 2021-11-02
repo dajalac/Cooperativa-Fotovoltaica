@@ -1,0 +1,7 @@
+@import '../../Styles/mixins';
+
+.cadastrarInvestidor{
+    @include flexCenter(column);
+    margin-top: 1rem;
+    gap:2rem
+}

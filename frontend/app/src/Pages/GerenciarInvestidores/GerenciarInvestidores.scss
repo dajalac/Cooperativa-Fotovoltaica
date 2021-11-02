@@ -1,0 +1,39 @@
+@import '../../Styles/mixins';
+
+.gerenciarInvestidores{
+    @include flexCenter(column);
+    margin-top: 20px;
+    gap:1rem;
+}
+  
+
+.gerenciarInvestidoresCard{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    width: 90%;
+    gap:1rem;
+    margin-top: 2rem;
+}
+
+.gerenciarInvestidoresNovoInvest{
+    @include flexCenter(row);
+    justify-content: right;
+    width: 90%;
+    cursor: pointer;
+
+    p{
+        @include flexCenter(row);
+       font-size: 1rem;
+       color: #1976d2;
+       gap: 5px;
+
+       &:hover{
+        color: #673ab7
+       }
+    }
+
+
+}
+
+

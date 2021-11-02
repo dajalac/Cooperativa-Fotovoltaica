@@ -1,0 +1,34 @@
+@import '../../Styles/variables';
+@import '../../Styles/mixins';
+
+.navbar{
+   @include flexCenter(row);
+   justify-content: space-between;
+    background-color:$navbar-color;
+    position: fixed;
+    padding: 8px 1rem;
+    max-width: 100%; 
+    top: 0; 
+    left:0;
+    margin: 0px;
+    right: 0;
+    z-index: 999;
+
+    div{
+        color: #f1faee;
+        font-family: 'Indie Flower', cursive;
+        font-size: 20px;
+    }
+}
+
+.navbarIcons{
+    color:$navbar-text;
+    font-size: 2.5rem;
+    visibility: hidden;
+}
+
+@media(max-width:650px){
+    .navbarIcons{
+        visibility:visible;
+    }
+}

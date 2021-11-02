@@ -1,0 +1,88 @@
+@import '../../Styles/mixins';
+@import '../../Styles/variables';
+
+.editarOuCadastrarForm{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:2rem;
+    padding: 2rem;
+    width: 50%;
+    background-color:$cards-background;
+    box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
+}
+
+.editarOuCadastrarFormPhone{
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #CACACA;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 1rem;
+    height: 58.5px ;
+
+    &:hover{
+        border-color: #000;
+    }
+
+    &:focus-within{
+        border-color: #1976d2;
+        box-shadow: 0 0 0 1px #1976d2;
+    }
+
+    input{
+        border: none;
+    font-size: 16px;
+    outline: none;
+    padding: 1rem; 
+    }
+}
+
+.editarOuCadastrarFormUsina{
+    @include flexCenter(column);
+   
+    width: 100%;
+    align-items: flex-start;
+}
+
+.editarOuCadastrarFormBtn{
+    display: flex;
+    gap:2rem;
+}
+
+.editarOuCadastrarFormUpdatePercentual{
+    @include flexCenter(row);
+    justify-content:start;
+    gap:1rem;
+    width: 90%;
+    margin-top: 5px;
+    
+    div{
+        @include flexCenter(row);
+        gap:10px;
+
+    }
+}
+
+.editarOuCadastrarFormIcons{
+    font-size: 20px;
+    color:$icons-color;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
+    padding: 5px;
+}
+
+@media(max-width:1130px){
+    .editarOuCadastrarForm{
+       width: 70%;
+    }
+}
+@media(max-width:650px){
+    .editarOuCadastrarForm{
+        box-shadow: none;
+        width: 90%;
+    }
+    .editarOuCadastrarFormUpdatePercentual{
+        @include flexCenter(column);
+    }
+   
+}

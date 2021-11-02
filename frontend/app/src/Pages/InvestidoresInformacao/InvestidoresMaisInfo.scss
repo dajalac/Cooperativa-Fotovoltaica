@@ -1,0 +1,72 @@
+@import '../../Styles/mixins';
+@import '../../Styles/variables';
+
+.investidoresMaisInfo{
+    @include flexCenter(column);
+    margin-top: 2rem;
+}
+
+.investidoresMaisInfoVoltar{
+    @include flexCenter(row);
+    justify-content: flex-start;
+    gap: 5px;
+    width: 90%;
+    margin-bottom: 1rem;
+    color:#616161;
+    cursor: pointer;
+
+}
+
+.investidoresMaisInfoCard{
+    display: flex;
+    justify-content: center;
+    gap:2rem;
+    width: 60%;
+    padding: 3rem 0;
+    box-shadow: 1px 1px 3px 1px rgb(199, 187, 187);
+    background-color: $cards-background;
+    
+}
+
+.investidoresMaisInfoHeader{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.investidoresMaisInfoBody{
+    @include flexCenter(column);
+    gap:2rem;
+    margin-top: 2rem;
+
+ 
+}
+
+.investidoresMaisInfoPersonal, .investidoresMaisInfoUsina {
+    @include flexCenter(column);
+    gap: 1rem;
+    width: 100%;
+    align-items: flex-start;
+}
+.investidoresMaisInfoUsina {
+    padding-top: 10px;
+    border-top: 1px solid rgb(199, 187, 187);
+}
+
+
+@media(max-width:1130px){
+    .investidoresMaisInfoCard{
+       width: 90%;
+    }
+}
+@media(max-width:650px){
+    .investidoresMaisInfoCard{
+        box-shadow: none;
+        flex-direction: column;
+    }
+    .investidoresMaisInfoPersonal, .investidoresMaisInfoUsina {
+        align-items: center;
+    }
+}
