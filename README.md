@@ -1,3 +1,4 @@
+# Cooperativa-Fotovoltaica
 ## Sobre
 Este projeto simula o gerenciamento da produção de energia de uma usina fotovoltaica compartilhada.
 Por meio desse aplicativo o usuário pode monitorar as métricas do dia anterior bem como o retorno monetário gerado no dia. Além disso, o app também permite o usuário gerenciar os investidores associado a usina. Uma live versão do aplicativo pode ser encontrada [aqui](https://dajalac.github.io/Cooperativa-Fotovoltaica/)
